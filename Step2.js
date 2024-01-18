@@ -9,6 +9,7 @@ class Cafe {
         this.order = order;
     }
 
+   
     addManager(obj){
         this.employee.push(obj);
         return `${obj.name} is now manager for ${this.name}`
@@ -27,12 +28,22 @@ class Cafe {
             this.menu.push(menuObj)
             return `${menuObj.name} added`
         }
+    }
+
+removeMenu(menuObject) {
+  
+     this.menu.splice(this.menu.indexOf(menuObject),1)
+     return `${menuObject.name} is removed.current menu available:${this.menu.map(item => item.name)}`
+}
+
 
 }
 
 const cafe1 = new Cafe(1, "E08 Kreuzberg", "Berlin", false);
 const cafe2 = new Cafe(2, "E08 Altona", "Altona", true);
 const cafe3 = new Cafe(3, "E08 Mitte", "Mitte", true);
+
+
 
 
 class Worker {
@@ -50,6 +61,9 @@ const worker5 = new Worker("Katy", "Cashier");
 const worker6 = new Worker("Lily", "Barista");
 
 
+
+
+
 class Manager extends Worker {
     constructor(name, branchId, branchWorkers = []) {
         super(name, "Manager")
@@ -57,6 +71,7 @@ class Manager extends Worker {
         this.branchId = branchId;
         this.branchWorkers = branchWorkers;
     }
+
 
     addWorker(worker) {
         this.branchWorkers.push(worker);
@@ -95,12 +110,9 @@ const food2 = new Menu("food", "Chocolate Cake", 2.5, true);
 
 const drink2 = new Menu("drink", "Beer", 3.5, false);
 
-
 const food3 = new Menu("food", "Sweet Hamburger", 11.5, true);
 
-
 const drink3 = new Menu("drink", "Wine", 5.5, false);
-
 
 console.log(cafe1.addManager(manager1));
 console.log(cafe2.addManager(manager2));
@@ -117,6 +129,10 @@ console.log(cafe2.addMenu(drink2));
 console.log(cafe3.addMenu(food3)); 
 console.log(cafe3.addMenu(drink3));
 
+console.log(cafe1.removeMenu(drink1)); 
+
+console.log(cafe2.removeMenu(drink2)); 
+
 
 console.log(manager1.addWorker(worker1)); 
 console.log(manager1.addWorker(worker2));
@@ -128,3 +144,6 @@ console.log(manager1);
 console.log(manager2);
 console.log(manager3);
 console.log(manager1.removeWorker("John"));
+
+
+
