@@ -17,7 +17,7 @@ class Cafe {
     addEmployee(){
         this.employee[0].branchWorkers.map(element => this.employee.push(element))
         let workersObj = this.employee.slice(1)
-        let workers = workersObj.map(item => `${item.name} ${item.position}`)
+        let workers = workersObj.map(item => `${item.name} (${item.position})`)
         return `Manager: ${this.employee[0].name}, workers: ${workers.join(', ')}`
 
     }
