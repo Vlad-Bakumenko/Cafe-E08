@@ -114,24 +114,6 @@ const food3 = new Menu("food", "Sweet Hamburger", 11.5, true);
 
 const drink3 = new Menu("drink", "Wine", 5.5, false);
 
-console.log(cafe1.addManager(manager1));
-console.log(cafe2.addManager(manager2));
-console.log(cafe3.addManager(manager3));
-
-
-console.log(cafe1.addEmployee());
-console.log(cafe2.addEmployee());
-console.log(cafe2.addEmployee());
-console.log(cafe1.addMenu(food1)); 
-console.log(cafe1.addMenu(drink1));
-console.log(cafe2.addMenu(food2)); 
-console.log(cafe2.addMenu(drink2));
-console.log(cafe3.addMenu(food3)); 
-console.log(cafe3.addMenu(drink3));
-
-console.log(cafe1.removeMenu(drink1)); 
-
-console.log(cafe2.removeMenu(drink2)); 
 
 
 console.log(manager1.addWorker(worker1)); 
@@ -140,10 +122,25 @@ console.log(manager2.addWorker(worker3));
 console.log(manager2.addWorker(worker4));
 console.log(manager3.addWorker(worker5)); 
 console.log(manager3.addWorker(worker6));
-console.log(manager1);
-console.log(manager2);
-console.log(manager3);
 console.log(manager1.removeWorker("John"));
 
+console.log(cafe1.addManager(manager1));
+console.log(cafe2.addManager(manager2));
+console.log(cafe3.addManager(manager3));
+
+console.log(cafe1.addEmployee());
+console.log(cafe2.addEmployee());
+console.log(cafe3.addEmployee());
+console.log(cafe1.addMenu(food1)); 
+console.log(cafe1.addMenu(drink1));
+console.log(cafe2.addMenu(food2)); 
+console.log(cafe2.addMenu(drink2));
+console.log(cafe3.addMenu(food3)); 
+console.log(cafe3.addMenu(drink3));
+
+console.log(cafe1.removeMenu(drink1)); 
+console.log(cafe2.removeMenu(drink2));
+
+console.log(cafe1);
 
 
